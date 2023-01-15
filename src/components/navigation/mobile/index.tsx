@@ -1,4 +1,5 @@
 import styles from "@/components/navigation/mobile/index.module.scss";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 const MobileNavigation = () => {
@@ -27,14 +28,17 @@ const MobileNavigation = () => {
               key={item}
               className={
                 item === selectedTab
-                  ? `nav-item ${styles.selected}`
-                  : "nav-item"
+                  ? `${styles["nav-item"]} ${styles.selected}`
+                  : `${styles["nav-item"]}`
               }
               onClick={() => setSelectedTab(item)}
             >
               {item}
               {item === selectedTab ? (
-                <div className={styles.background}></div>
+                <motion.div
+                  className={styles.background}
+                  layoutId="background"
+                ></motion.div>
               ) : null}
             </li>
           ))}
