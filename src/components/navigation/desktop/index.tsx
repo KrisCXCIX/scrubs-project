@@ -2,7 +2,7 @@ import styles from "@/components/navigation/desktop/index.module.scss";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const Navigation = () => {
+const DesktopNavigation = () => {
   const [selectedTab, setSelectedTab] = useState("TWO");
 
   return (
@@ -25,4 +25,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default DesktopNavigation;
