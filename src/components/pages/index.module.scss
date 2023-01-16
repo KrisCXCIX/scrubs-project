@@ -1,0 +1,15 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .navigation {
+    height: 48px;
+    background-color: #c06c84;
+  }
+
+  .content {
+    height: 100vh;
+    background-color: #f8b195;
+  }
+}

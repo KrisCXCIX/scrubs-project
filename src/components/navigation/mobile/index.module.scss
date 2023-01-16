@@ -1,0 +1,48 @@
+.menu-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  z-index: 1;
+}
+
+.side-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 0;
+  overflow-x: hidden;
+  background: #355b7d7b;
+  transition: width 0.5s;
+
+  .navigation-wrapper {
+    list-style: none;
+
+    .nav-item {
+      height: 60px;
+    }
+
+    .selected {
+      color: #f8b195;
+      position: relative;
+
+      .background {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        height: 100%;
+        background: #355b7d66;
+      }
+    }
+  }
+  &.closed {
+    width: 0;
+  }
+  &.open {
+    width: 80vw;
+  }
+}
