@@ -1,8 +1,12 @@
-import styles from "@/components/main-content/index.module.scss";
-const Content = () => {
+import FirstPage from "@/components/main-content/first-page";
+import SecondPage from "@/components/main-content/second-page";
+import { INavigationProps } from "@/components/navigation/types";
+
+const Content = ({ selectedTab }: Omit<INavigationProps, "setSelectedTab">) => {
   return (
     <>
-      <div className={styles["contet-wrapper"]}></div>
+      <FirstPage selectedTab={selectedTab} />
+      <SecondPage selectedTab={selectedTab} />
     </>
   );
 };

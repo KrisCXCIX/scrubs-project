@@ -1,13 +1,15 @@
+import { pagesArray } from "@/components/navigation/constants";
 import styles from "@/components/navigation/desktop/index.module.scss";
+import { INavigationProps } from "@/components/navigation/types";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
-const DesktopNavigation = () => {
-  const [selectedTab, setSelectedTab] = useState("TWO");
-
+const DesktopNavigation = ({
+  selectedTab,
+  setSelectedTab,
+}: INavigationProps) => {
   return (
     <ul className={styles["navigation-wrapper"]}>
-      {["ONE", "TWO", "THREE", "FOUR"].map((item) => (
+      {pagesArray.map((item) => (
         <li
           key={item}
           className={
