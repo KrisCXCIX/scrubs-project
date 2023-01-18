@@ -1,4 +1,6 @@
 import Content from "@/components/main-content";
+import FirstPage from "@/components/main-content/first-page";
+import SecondPage from "@/components/main-content/second-page";
 import DesktopNavigation from "@/components/navigation/desktop";
 import MobileNavigation from "@/components/navigation/mobile";
 import { IPages } from "@/components/navigation/types";
@@ -29,7 +31,22 @@ const Main = () => {
         )}
       </nav>
       <main className={styles["content"]}>
-        <Content selectedTab={selectedTab} />
+        <Content>
+          <div
+            className={`${
+              selectedTab === "ONE" ? styles["active"] : styles["disabled"]
+            } ${styles["page-wrapper"]}`}
+          >
+            <FirstPage selectedTab={selectedTab} />
+          </div>
+          <div
+            className={`${
+              selectedTab === "TWO" ? styles["active"] : styles["disabled"]
+            } ${styles["page-wrapper"]}`}
+          >
+            <SecondPage selectedTab={selectedTab} />
+          </div>
+        </Content>
       </main>
     </div>
   );

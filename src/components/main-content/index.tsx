@@ -1,14 +1,7 @@
-import FirstPage from "@/components/main-content/first-page";
-import SecondPage from "@/components/main-content/second-page";
-import { INavigationProps } from "@/components/navigation/types";
+import { FC, ReactNode } from "react";
 
-const Content = ({ selectedTab }: Omit<INavigationProps, "setSelectedTab">) => {
-  return (
-    <>
-      <FirstPage selectedTab={selectedTab} />
-      <SecondPage selectedTab={selectedTab} />
-    </>
-  );
+const Content: FC<Record<string, ReactNode>> = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default Content;
