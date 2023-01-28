@@ -6,10 +6,24 @@
   .navigation {
     height: 48px;
     background-color: #c06c84;
+    z-index: 2;
   }
 
   .content {
     height: 100vh;
-    background-color: #f8b195;
+    .page-wrapper {
+      width: 100%;
+      position: absolute;
+    }
+    .active {
+      left: 0;
+      transition: left 0.4s;
+      z-index: 1;
+    }
+
+    .disabled {
+      left: -100%;
+      transition: left 0.1s 0.4s;
+    }
   }
 }

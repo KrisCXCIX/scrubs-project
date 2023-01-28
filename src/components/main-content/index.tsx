@@ -1,10 +1,7 @@
-import styles from "@/components/main-content/index.module.scss";
-const Content = () => {
-  return (
-    <>
-      <div className={styles["contet-wrapper"]}></div>
-    </>
-  );
+import { FC, ReactNode } from "react";
+
+const Content: FC<Record<string, ReactNode>> = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default Content;

@@ -3,7 +3,7 @@
   right: 0;
   top: 0;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 .side-menu {
@@ -16,6 +16,14 @@
   overflow-x: hidden;
   background: #355b7d7b;
   transition: width 0.5s;
+  z-index: 1;
+
+  .header {
+    height: 48px;
+    font-size: 22px;
+    line-height: 48px;
+    color: #fff;
+  }
 
   .navigation-wrapper {
     list-style: none;

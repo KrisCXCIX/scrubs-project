@@ -1,9 +1,13 @@
+import { pagesArray } from "@/components/navigation/constants";
 import styles from "@/components/navigation/mobile/index.module.scss";
+import { INavigationProps } from "@/components/navigation/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-const MobileNavigation = () => {
-  const [selectedTab, setSelectedTab] = useState("TWO");
+const MobileNavigation = ({
+  setSelectedTab,
+  selectedTab,
+}: INavigationProps) => {
   const [isMenuActive, setIsMenuActive] = useState(false);
 
   return (
@@ -22,8 +26,9 @@ const MobileNavigation = () => {
             : `${styles["side-menu"]} ${styles["close"]}`
         }
       >
+        <p className={styles["header"]}>DR.Scrubs</p>
         <ul className={styles["navigation-wrapper"]}>
-          {["ONE", "TWO", "THREE", "FOUR"].map((item) => (
+          {pagesArray.map((item) => (
             <li
               key={item}
               className={
@@ -31,7 +36,12 @@ const MobileNavigation = () => {
                   ? `${styles["nav-item"]} ${styles.selected}`
                   : `${styles["nav-item"]}`
               }
-              onClick={() => setSelectedTab(item)}
+              onClick={() => {
+                setSelectedTab(item);
+                setTimeout(() => {
+                  setIsMenuActive(!isMenuActive);
+                }, 500);
+              }}
             >
               {item}
               {item === selectedTab ? (
